@@ -1,9 +1,6 @@
 import java.io.File;
 import java.io.FileNotFoundException;
 import java.util.*;
-import java.util.Scanner;
-import java.util.HashMap;
-import java.util.Map;
 
 public class readText {
     public static void main(String args[]) throws FileNotFoundException  {
@@ -16,7 +13,7 @@ public class readText {
         Map<String, Integer> myMap = new HashMap<String, Integer>();
 
         //variables
-        Integer count = 1;
+        int count = 0;
         String text;
 
         //keeps reading until end of poem
@@ -34,22 +31,19 @@ public class readText {
                 //test
                 //System.out.print(lettersOnly + ", ");
 
-                //put keys in hashmap
-                myMap.put(lettersOnly, count);
 
                 //incrament frequency of words
-                if (myMap.containsKey(lettersOnly)) {
-                    myMap.put(lettersOnly, 1);
-                    //System.out.println("Hello!");
-                } else {
-                    myMap.put(lettersOnly, count + 1);
-                    //System.out.println("Hi!!!");
-                }
+                count = myMap.containsKey(lettersOnly) ? myMap.get(lettersOnly) : 0;
+                myMap.put(lettersOnly, count + 1);
+
             }
         }
         //Print word and frequency
-        myMap.entrySet().forEach(entry -> {
-            System.out.println(entry.getKey() + " = " + entry.getValue());
-        });
+        myMap.entrySet().stream()
+                .sorted(Map.Entry.comparingByValue())
+                .forEach(System.out::println);
+//        myMap.entrySet().forEach(entry -> {
+//            System.out.println(entry.getKey() + " = " + entry.getValue());
+//        });
     }
 }
