@@ -2,6 +2,21 @@ import java.io.File;
 import java.io.FileNotFoundException;
 import java.util.*;
 
+/**
+ * Return print statement including words and their frequency in the poem.
+ * Program will run through raven.txt file and scan lines into a hashmap
+ * which will keep track of words.
+ * <p>
+ * Words are counted in myMap and displayed in the final function.
+ *
+ * @param String words for hashmap
+ * @return words in poem the Raven by Edgar Allen Poe
+ * @throws IOException if file not found
+ *
+ * @author Sophie
+ *
+ */
+
 public class readText {
     public static void main(String args[]) throws FileNotFoundException  {
 
