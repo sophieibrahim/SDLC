@@ -21,7 +21,7 @@ public class readText {
     public static void main(String args[]) throws FileNotFoundException  {
 
         //Reads file
-        File file = new File("src/raven.txt");
+        File file = new File("raven.txt");
         Scanner scan = new Scanner(file);
 
         //initiate hashmap
