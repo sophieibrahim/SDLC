@@ -57,6 +57,7 @@ public class readText {
         myMap.entrySet().stream()
                 .sorted(Map.Entry.comparingByValue())
                 .forEach(System.out::println);
+        System.out.println("This is the main branch.");
 //        myMap.entrySet().forEach(entry -> {
 //            System.out.println(entry.getKey() + " = " + entry.getValue());
 //        });
